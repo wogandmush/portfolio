@@ -1,0 +1,41 @@
+{
+  "name": "portfolio-frontend",
+  "version": "1.0.0",
+  "description": "Frontend of my portfolio website",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "lint": "eslint src",
+    "lint-fix": "eslint src --fix",
+    "pretty": "./node_modules/.bin/prettier \"src/**/*.js\" --write",
+    "test": "\"return 1\""
+  },
+  "keywords": [
+    "portfolio",
+    "react",
+    "redux"
+  ],
+  "author": "Daniel Quinn Ballard",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.1.0",
+    "react-router-dom": "^5.0.1",
+    "redux": "^4.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-google": "^0.13.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.14.2",
+    "prettier": "^1.18.2"
+  }
+}
