@@ -22,6 +22,10 @@ module.exports = {
     'react',
   ],
   rules: {
-    'react/jsx-filename-extension': 0
+    'react/jsx-filename-extension': 0,
+    'jsx-a11y/click-events-have-key-events': 'warn',
+    'jsx-a11y/no-noninteractive-element-interactions': 'warn',
+    'jsx-a11y/no-static-element-interactions': 'warn',
+    'no-bitwise': ['error', {'int32Hint': true}],
   },
 };

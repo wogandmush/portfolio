@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
+    "build": "webpack",
     "lint": "eslint src",
     "lint-fix": "eslint src --fix",
     "pretty": "./node_modules/.bin/prettier \"src/**/*.js\" --write",
+    "fix": "npm run pretty; npm run lint-fix && cowsay \"groovy baby!\"",
     "test": "\"return 1\""
   },
   "keywords": [
@@ -18,11 +20,15 @@
   "author": "Daniel Quinn Ballard",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^8.0.0",
+    "dotenv-webpack": "^1.7.0",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.1.0",
     "react-router-dom": "^5.0.1",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
@@ -36,6 +42,8 @@
     "eslint-plugin-import": "^2.18.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.14.2",
-    "prettier": "^1.18.2"
+    "html-webpack-plugin": "^3.2.0",
+    "prettier": "^1.18.2",
+    "webpack": "^4.35.0"
   }
 }
