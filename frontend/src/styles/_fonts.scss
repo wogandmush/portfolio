@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap');
+
+
+$font: 'Roboto-Condensed', sans-serif;
+
+$sizes: (
+  xxs, xs, sm, ms, md, ml, lg, xl, xxl
+);
+
+$i: 0.5;
+
+@each $size in $sizes {
+  .text-#{$size} {
+    font-size: #{$i}em;
+  }
+  $i: $i+0.5;
+}

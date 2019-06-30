@@ -5,7 +5,12 @@ export const deletePost = id => ({
   payload: id,
 });
 
-export const addPost = index => (dispatch) => {
+export const addPost = post => ({
+  type: Posts.ADD_POST,
+  payload: post,
+});
+
+export const fetchPost = index => (dispatch) => {
   fetch(`${process.env.API_URL}/posts/${index}`)
     .then(res => res.json())
     .then(post => dispatch({

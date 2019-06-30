@@ -3,8 +3,19 @@ import PropTypes from 'prop-types';
 import PostModel from '../models/Post';
 
 const Post = ({ post, deletePost }) => (
-  <div>
-    <h1>{post.title}</h1>
+  <div className="post">
+    <div className="post-heading row">
+      <h1 className="post-title text-ml">{post.title}</h1>
+      {deletePost && (
+        <button
+          type="button"
+          className="btn-reset red text-md float-right"
+          onClick={() => deletePost(post.id)}
+        >
+          &times;
+        </button>
+      )}
+    </div>
     <div>
       {post.body.map((elem) => {
         let content;
@@ -22,12 +33,11 @@ const Post = ({ post, deletePost }) => (
         return <div key={`${post.id}-body-${elem.order}`}>{content}</div>;
       })}
     </div>
-    {deletePost && <i onClick={() => deletePost(post.id)}>&times;</i>}
   </div>
 );
 
 Post.defaultProps = {
-  deletePost: () => console.log('cannot delete post'),
+  deletePost: () => 0,
 };
 
 Post.propTypes = {

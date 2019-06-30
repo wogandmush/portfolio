@@ -1,0 +1,63 @@
+/*
+$colors: (
+  black, white,
+  grey, grey-hl,
+  red, red-hl,
+  green, green-hl,
+  orange, orange-hl, yellow,
+  blue, blue-hl,
+  purple, purple-hl,
+  turquoise, turquoise-hl,
+  lightgrey, lightgrey-hl,
+)
+*/
+
+$black: #1D1F21;
+$white: #C5C8C6;
+$grey: #282A2E;
+$grey-hl: #373B41;
+$red: #A54242;
+$red-hl: #CC6666;
+$green: #8C9440;
+$green-hl: #B5BD68;
+$orange: #DE935F;
+$orange-hl: #F0C674;
+$yellow: #F0C674;
+$blue: #5F819D;
+$blue-hl: #81A2BE;
+$purple: #85678F;
+$purple-hl: #B294BB;
+$turquoise: #5E8D87;
+$turquoise-hl: #8ABEB7;
+$lightgrey: #707880;
+$lightgrey-hl: #C5C8C6;
+
+$colors: (
+  black: $black,
+  white: $white,
+  grey: $grey,
+  grey-hl: $grey-hl,
+  red: $red,
+  red-hl: $red-hl,
+  green: $green,
+  green-hl: $green-hl,
+  orange: $orange,
+  orange-hl: $orange-hl,
+  yellow: $yellow,
+  blue: $blue,
+  blue-hl: $blue-hl,
+  purple: $purple,
+  purple-hl: $purple-hl,
+  turquoise: $turquoise,
+  turquoise-hl: $turquoise-hl,
+  lightgrey: $lightgrey,
+  lightgrey-hl: $lightgrey-hl,
+);
+@each $color, $value in $colors{
+  .#{$color} {
+    color: $value;
+  }
+  .bg-#{$color} {
+    background-color: $value;
+  }
+}

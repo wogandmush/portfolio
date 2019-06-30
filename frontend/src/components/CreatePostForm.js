@@ -8,7 +8,6 @@ const CreatePostForm = ({ addPost, numPosts }) => {
   const [postTitle, setPostTitle] = useState('Title');
   const [postElems, setPostContent] = useState([
     {
-      id: numPosts,
       order: 0,
       type: 'p',
       content: 'anus face',
@@ -31,11 +30,12 @@ const CreatePostForm = ({ addPost, numPosts }) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    addPost({ id: 1, title: postTitle, body: postElems });
+    const newPost = { id: numPosts + 1, title: postTitle, body: postElems };
+    addPost(newPost);
   };
   return (
     <>
-      <Post post={{ id: 1, title: postTitle, body: postElems }} />
+      <Post post={{ id: numPosts + 1, title: postTitle, body: postElems }} />
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -54,7 +54,11 @@ CreatePostForm.propTypes = {
   addPost: PropTypes.func.isRequired,
 };
 
+const mapStateToProps = ({ posts }) => ({
+  numPosts: posts.posts.length,
+});
+
 export default connect(
-  state => ({ numPosts: state.posts }),
+  mapStateToProps,
   { addPost: addPostAction },
 )(CreatePostForm);
