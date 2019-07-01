@@ -3,17 +3,6 @@ import { Posts } from '../constants';
 const initialState = {
   posts: [
     {
-      id: 1,
-      title: 'Post 1',
-      body: [
-        {
-          order: 1,
-          type: 'p',
-          content: 'This is post 1',
-        },
-      ],
-    },
-    {
       id: 2,
       title: 'Post 2',
       body: [
@@ -29,6 +18,17 @@ const initialState = {
         },
       ],
     },
+    {
+      id: 1,
+      title: 'Post 1',
+      body: [
+        {
+          order: 1,
+          type: 'p',
+          content: 'This is post 1',
+        },
+      ],
+    },
   ],
 };
 
@@ -37,7 +37,7 @@ export default (state = initialState, action) => {
     case Posts.ADD_POST:
       return {
         ...state,
-        posts: [...state.posts, action.payload],
+        posts: [action.payload, ...state.posts],
       };
     case Posts.UPDATE_POST:
       return {

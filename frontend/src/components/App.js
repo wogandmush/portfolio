@@ -12,12 +12,14 @@ const App = () => (
   <Provider store={store}>
     <Router>
       <Header />
-      <h1 className="turquoise-hl">This is my app</h1>
-      <Switch>
-        <Route path="/home" component={Home} />
-        <Route path="/posts/create" component={CreatePostForm} />
-        <Route path="/posts" component={Posts} />
-      </Switch>
+      <div className="container">
+        <h1 className="text-lg center turquoise-hl">This is my app</h1>
+        <Switch>
+          <Route path="/home" component={Home} />
+          <Route path="/posts/create" component={CreatePostForm} />
+          <Route path="/posts" component={Posts} />
+        </Switch>
+      </div>
     </Router>
   </Provider>
 );

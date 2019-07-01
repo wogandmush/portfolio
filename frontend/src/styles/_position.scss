@@ -1,10 +1,13 @@
-@import 'colors';
-
 $sides: (top, bottom, left, right);
 
 @each $side in $sides {
   .sticky-#{$side} {
     position: sticky;
-    #{$side}: 0;
+    #{$side}: 0px;
+    #{$side}: 0px;
+  }
+  .fixed-#{$side} {
+    position: fixed;
+    #{$side}: 0px;
   }
 }

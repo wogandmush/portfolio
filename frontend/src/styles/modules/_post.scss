@@ -1,0 +1,57 @@
+@import '../colors';
+@import '../fonts';
+
+.post {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 90%;
+  border: 1px solid $white;
+  border-radius: 15px;
+  padding: 2em;
+  margin: 2em auto;
+  .post-heading {
+    display: flex;
+    .post-title {
+      color: $blue;
+      flex: 9;
+    }
+    .post-delete {
+      align-self: start;
+      flex: 1;
+      transition: color 0.5s;
+      &:hover {
+        color: lighten($red, 10%);
+      }
+    }
+  }
+}
+
+#create-post {
+  display: flex;
+  flex-direction: row;
+  .form-vert {
+    flex: 4;
+    padding: 2em;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+  }
+  .form-control {
+    @extend .text-sm;
+    background: $grey-hl;
+    padding: 0.3em;
+    width: 100%;
+    border: 1px solid $black;
+    resize: vertical;
+    margin: 0.2em;
+    &:active, &:focus, &:target {
+      border: none;
+      background: $grey;
+      outline: 2px solid $lightgrey;
+    }
+  }
+  .post {
+    flex: 5;
+  }
+}

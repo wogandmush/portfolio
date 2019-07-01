@@ -1,0 +1,53 @@
+@import '../colors';
+@import '../fonts';
+
+$banner-height: 100px;
+$header-height: 10em;
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: $black;
+  transition: 0.4s;
+  .banner {
+    @extend .text-xl;
+    font-weight: 700;
+    height: $banner-height;
+    overflow: hidden;
+    align-self: center;
+    justify-self: center;
+  }
+  &.shrunk {
+    top: -$banner-height;
+  }
+}
+.navbar {
+  display: flex;
+  background: $grey-hl;
+  flex-direction: column;
+  .nav-links {
+    // align-self: center;
+    width: 70%;
+    display: flex;
+    padding: 0.3em;
+    flex-direction: row;
+    justify-content: center;
+    .nav-link {
+      width: 20%;
+      min-width: 10em;
+      margin: 0.7em;
+      padding: 0.3em;
+      background: $grey;
+      text-align: center;
+      &:hover {
+        background: lighten($grey, 10%);
+      }
+      a {
+        text-align: center;
+        padding: 0.8em 1em;
+        color: $turquoise-hl;
+      }
+    }
+  }
+}

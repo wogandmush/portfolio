@@ -34,7 +34,7 @@ module.exports = {
 
       },
       {
-        test: /\^_.*\.s?[ac]ss$/,
+        test: /^_.*\.s?[ac]ss$/,
         loader: ['style-loader',
           {
             loader:'css-loader',
