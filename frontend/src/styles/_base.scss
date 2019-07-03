@@ -11,10 +11,24 @@ ul {
   list-style: none;
 }
 
-nav, html, input, body, ul, textarea {
+nav, html, input, body, ul, textarea, select {
   margin: 0;
   padding: 0;
 }
+select.form-control {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -webkit-border-radius: 0px;
+
+    background-position: 99% 50%;
+    background-repeat: no-repeat;
+    background-size: 16px;
+}
+
+img {
+  width: 100%;
+}
+
 body {
   background: $black;
 }
@@ -30,7 +44,3 @@ li>a {
   }
 }
 
-.container {
-  padding: 2em;
-  margin: 0 auto;
-}

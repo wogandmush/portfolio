@@ -9,12 +9,17 @@ const initialState = {
         {
           order: 1,
           type: 'p',
-          content: 'This is an image: ',
+          content: {
+            text: 'This is an image: ',
+          },
         },
         {
           order: 2,
           type: 'img',
-          content: 'http://oi65.tinypic.com/xpzxc0.jpg',
+          content: {
+            imageUrl: 'http://oi65.tinypic.com/xpzxc0.jpg',
+            imageAlt: 'RandomPic',
+          },
         },
       ],
     },
@@ -25,7 +30,9 @@ const initialState = {
         {
           order: 1,
           type: 'p',
-          content: 'This is post 1',
+          content: {
+            text: 'This is post 1',
+          },
         },
       ],
     },

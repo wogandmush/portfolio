@@ -1,28 +1,47 @@
 @import '../colors';
 @import '../fonts';
+@import '../base';
 
 .post {
+  &.preview {
+    height: 80vh;
+    overflow: auto;
+  }
   display: flex;
   flex-flow: column nowrap;
   width: 90%;
   border: 1px solid $white;
   border-radius: 15px;
+  align-items: flex-center;
   padding: 2em;
   margin: 2em auto;
   .post-heading {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     .post-title {
+      justify-self: stretch;
       color: $blue;
       flex: 9;
     }
     .post-delete {
-      align-self: start;
       flex: 1;
+      max-width: 2em;
+      align-self: flex-start;
+      width: 2em;
       transition: color 0.5s;
       &:hover {
         color: lighten($red, 10%);
       }
     }
+  }
+
+  .highlighted {
+    @extend .text-sm;
+    opacity: 0.5;
+    background: $grey;
+    margin: 0.2em;
+    padding: 0.3em;
   }
 }
 
@@ -31,6 +50,7 @@
   flex-direction: row;
   .form-vert {
     flex: 4;
+
     padding: 2em;
     display: flex;
     align-items: start;

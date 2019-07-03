@@ -1,20 +1,28 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import Route from '../models/Route';
 
-const Header = () => {
+const Header = ({routes}) => {
   const headerRef = useRef();
-  const links = [
-    { path: '/', text: 'Home' },
-    { path: '/posts', text: 'Posts' },
-    { path: '/posts/create/', text: 'Create Post' },
-  ];
 
   useEffect(() => {
-    // const header = document.getElementById('header');
-    const interval = setInterval(() => {
-      headerRef.current.className = window.scrollY > 0 ? 'sticky-top shrunk' : 'sticky-top';
-    }, 100);
-    return () => clearInterval(interval);
+    let interval;
+    const scrollListener = () => {
+      headerRef.current.className = 'sticky-top shrunk';
+      window.removeEventListener('scroll', scrollListener);
+      interval = setInterval(() => {
+        if (window.scrollY === 0) {
+          window.addEventListener('scroll', scrollListener);
+          clearInterval(interval);
+        }
+      }, 100);
+    };
+    window.addEventListener('scroll', scrollListener);
+
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('scroll', scrollListener);
+    };
   }, []);
 
   return (
@@ -24,9 +32,9 @@ const Header = () => {
       </Link>
       <nav className="navbar">
         <ul className="nav-links">
-          {links.map(link => (
-            <li className="nav-link" key={`nav-link-${link.text}`}>
-              <Link to={link.path}>{link.text}</Link>
+          {routes.map(route => (
+            <li className="nav-link" key={`nav-link-${route.name}`}>
+              <Link to={route.path}>{route.name}</Link>
             </li>
           ))}
         </ul>
@@ -34,5 +42,10 @@ const Header = () => {
     </header>
   );
 };
+
+Header.propTypes = {
+  route: Route,
+}
+
 
 export default Header;

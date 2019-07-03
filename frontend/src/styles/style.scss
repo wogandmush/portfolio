@@ -3,6 +3,7 @@
 @import 'base';
 @import 'position';
 @import 'buttons';
+@import 'animations';
 @import './modules/navbar';
 @import './modules/post';
 
@@ -33,10 +34,9 @@
 .flex-row {
   display: flex;
   flex-direction: row;
+  align-items: center;
   .float-right {
     justify-self: start;
     align-self: end;
   }
 }
-
-
